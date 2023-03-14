@@ -19,7 +19,7 @@ import javax.validation.Valid;
 @Controller
 @RequestMapping("eventCategories")
 public class EventCategoryController {
-
+git
     @Autowired
     private EventCategoryRepository eventCategoryRepository;
 
@@ -33,7 +33,7 @@ public class EventCategoryController {
     @GetMapping("create")
     public String renderCreateEventCategoryForm(Model model) {
         model.addAttribute("title", "Create Category");
-        model.addAttribute(new EventCategory());
+        model.addAttribute("eventCategory",new EventCategory());
         return "eventCategories/create";
     }
 
@@ -43,7 +43,7 @@ public class EventCategoryController {
 
         if (errors.hasErrors()) {
             model.addAttribute("title", "Create Category");
-            model.addAttribute(new EventCategory());
+            model.addAttribute("eventCategory",new EventCategory());
             return "eventCategories/create";
         }
 
